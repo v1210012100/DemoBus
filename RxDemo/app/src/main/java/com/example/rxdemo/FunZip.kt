@@ -5,6 +5,7 @@ import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 import io.reactivex.ObservableSource
 import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.BiFunction
 import io.reactivex.schedulers.Schedulers
@@ -49,7 +50,7 @@ object FunZip {
             first(),
             second(),
             zipper()
-        ).observeOn(Schedulers.io())
+        ).observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : Observer<String> {
                 override fun onSubscribe(d: Disposable) {
 //                    disposable = d
