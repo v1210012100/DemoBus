@@ -22,7 +22,9 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             FunZip.zip()
+//            SchedulerFun.main();
         }
+
     }
 
 
